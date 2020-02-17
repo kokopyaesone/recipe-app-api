@@ -32,6 +32,7 @@ class UserSeralizer(serializers.ModelSerializer):
 
         return user    
 
+
 class AuthTokenSerializer(serializers.Serializer):
     """Serializer for the user authentication object"""
     email = serializers.CharField()
@@ -60,3 +61,4 @@ class AuthTokenSerializer(serializers.Serializer):
         print("***Attributes***")
         print(attrs)
         return attrs
+        

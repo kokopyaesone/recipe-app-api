@@ -1,12 +1,17 @@
 from rest_framework import generics, authentication, permissions
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
+from  core.models import User
 
 from user.serializers import UserSeralizer, AuthTokenSerializer
 
 class CreateUserView(generics.CreateAPIView):
     """Create a new user in the system"""
     serializer_class = UserSeralizer
+
+class  ListUserView(generics.ListAPIView):
+    serializer_class = UserSeralizer
+    queryset = User.objects.all()   
 
 
 class CreateTokenView(ObtainAuthToken):
