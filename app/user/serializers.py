@@ -30,7 +30,7 @@ class UserSeralizer(serializers.ModelSerializer):
             user.set_password(password)
             user.save()
 
-        return user    
+        return user
 
 
 class AuthTokenSerializer(serializers.Serializer):
@@ -57,7 +57,7 @@ class AuthTokenSerializer(serializers.Serializer):
             msg = _('Unable to authenticate with provided credentials')
             raise serializers.ValidationError(msg, code='authentication')
 
-        attrs['user']=user
+        attrs['user']= user
         print("***Attributes***")
         print(attrs)
         return attrs
